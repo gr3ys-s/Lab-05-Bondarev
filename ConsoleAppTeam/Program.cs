@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppTeam.Modules;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,25 @@ namespace ConsoleAppTeam
     {
         static void Main(string[] args)
         {
-            /// Begin coding. . .
+            Console.WriteLine("Лабораторная работа №5. Вариант 3");
+
+            /// тут факториал
+
+
+            #region
+            int[] array = InputModule.ReadArray("Введите числа для массива (Enter, чтобы остановиться): ");
+            if (ValidationModule.CheckArray(array))
+            {
+                Console.Write("Ваш массив: ");
+                for (int i = 0; i < array.Length; i++)
+                {
+                    Console.Write(array[i] + " ");
+                }
+                Console.WriteLine();
+                ProcessingModule.FindMin(array);
+            }
+            #endregion
+            Console.ReadKey();
         }
     }
 }
