@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppTeam.Modules
 {
-    internal class ProcessingModule
+    public static class ProcessingModule
     {
+        public static int FindMin(int[] array)
+        {
+            int minNumber = array.Min();
+            Console.WriteLine("Минимум в массиве: " + minNumber);
+            return minNumber;
+        }
     }
 }
