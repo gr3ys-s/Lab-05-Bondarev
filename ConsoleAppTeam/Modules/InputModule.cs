@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace ConsoleAppTeam.Modules
 {
-    public class InputModule
+    public static class InputModule
     {
+        public static int[] ReadArray(string message)
+        {
+            Console.Write(message);
+            int[] array;
+            try
+            {
+                array = Console.ReadLine()
+                    .Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Select(int.Parse)
+                    .ToArray();
+                return array;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Ошибка ввода: " + ex.Message);
+                return null;
+            }
+        }
     }
 }
